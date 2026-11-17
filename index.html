@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Razab USA — Elevate Your Culinary Sanctuary (Thanksgiving Masterclass)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          /* Official UI Theme from Screenshot & Stitch */
+          'rz-olive-dark': '#48523A',
+          'rz-olive-btn': '#5B6648',
+          'rz-clay': '#C8634B',
+          'rz-clay-hover': '#B2533D',
+          'rz-linen': '#F7F4EE',
+          'rz-linen-dark': '#EFEAE1',
+          'rz-espresso': '#221E1B',
+          'rz-muted': '#6B635B',
+          'rz-border': '#E4DDD2',
+          'rz-gold': '#C8A97E'
+        },
+        fontFamily: {
+          serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #ECE7DF; }
+
+  /* Glassmorphism Frosted Pills */
+  .glass-pill {
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    color: #FFFFFF;
+  }
+  .glass-pill:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  /* Bento Card Hover */
+  .bento-card {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
+  }
+  .bento-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px -8px rgba(34, 30, 27, 0.12);
+  }
+
+  /* Vertical Floating Tab on Left */
+  .floating-tab {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+</style>
+</head>
+<body class="text-rz-espresso font-sans antialiased min-h-screen py-6 px-2 sm:px-4">
+
+  <!-- ==================== VIEWPORT CONTROLLER ==================== -->
+  <div class="max-w-[620px] mx-auto mb-3 flex items-center justify-between px-2 text-xs">
+    <div class="flex items-center gap-2 text-stone-600">
+      <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+      <span class="text-[11.5px] font-medium text-stone-600">Canvas Width: <strong class="text-stone-900" id="dim-indicator">600px</strong></span>
+    </div>
+    
+    <div class="flex items-center gap-1 bg-white p-1 rounded-lg border border-rz-border shadow-sm text-[11px]">
+      <button onclick="setContainerWidth('600px')" id="btn-600" class="px-2.5 py-0.5 rounded text-white font-medium bg-rz-olive-dark transition-colors">600px</button>
+      <button onclick="setContainerWidth('480px')" id="btn-480" class="px-2.5 py-0.5 rounded text-stone-600 hover:text-stone-900 transition-colors">480px</button>
+      <button onclick="setContainerWidth('375px')" id="btn-375" class="px-2.5 py-0.5 rounded text-stone-600 hover:text-stone-900 transition-colors">375px</button>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- ==================== MAIN 600px EMAIL CONTAINER ========================= -->
+  <!-- ========================================================================= -->
+  <main id="email-canvas" class="w-full max-w-[600px] mx-auto bg-rz-linen rounded-[28px] overflow-hidden shadow-2xl transition-all duration-300 relative border border-rz-border">
+    
+    <!-- ==================== 1. TOP ANNOUNCEMENT BAR (MATCHING SCREENSHOT) ==================== -->
+    <div class="bg-rz-olive-dark text-[#FAF7F2] py-2.5 px-4 sm:px-6 flex items-center justify-between gap-2 text-[11px] font-sans">
+      <div class="flex items-center gap-2 overflow-hidden">
+        <span class="bg-rz-clay text-white font-bold text-[9px] uppercase px-2 py-0.5 rounded-full tracking-wider shrink-0 shadow-sm">
+          FREE DELIVERY
+        </span>
+        <span class="text-white/90 truncate text-[11px] hidden xs:inline">
+          Spend $50 &amp; enjoy Complimentary Express Delivery
+        </span>
+      </div>
+      <a href="https://razab.com/discount/HARVEST?redirect=%2Fcollections%2Fall" class="bg-rz-olive-btn hover:bg-rz-clay text-white font-semibold text-[10px] uppercase px-3 py-1 rounded-full tracking-wider transition-colors shrink-0 shadow-sm flex items-center gap-1">
+        <span>SHOP NOW</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+
+    <!-- ==================== 2. BRAND NAVBAR (MATCHING SCREENSHOT) ==================== -->
+    <header class="bg-white py-4 px-6 border-b border-rz-border flex items-center justify-between">
+      
+      <!-- Logo: Terracotta Mark + Spaced Serif -->
+      <a href="https://razab.com" class="flex items-center gap-2.5 group">
+        <div class="w-7 h-7 rounded-md bg-rz-clay flex items-center justify-center text-white font-serif font-bold text-base shadow-sm">
+          R
+        </div>
+        <span class="font-serif font-bold text-lg tracking-[0.22em] text-rz-espresso uppercase">
+          R A Z A B
+        </span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden sm:flex items-center gap-5 text-[11px] uppercase tracking-wider text-rz-espresso font-semibold">
+        <a href="https://razab.com" class="hover:text-rz-clay transition-colors">Home</a>
+        <a href="https://razab.com/collections/all" class="hover:text-rz-clay transition-colors flex items-center gap-0.5">
+          Shop By Need <span class="text-[9px]">&or;</span>
+        </a>
+        <a href="https://razab.com/collections/glass-loaf-pans-with-lids" class="hover:text-rz-clay transition-colors">Bakeware</a>
+        <a href="https://razab.com/discount/HARVEST?redirect=%2Fcollections%2Fall" class="text-rz-clay hover:underline transition-colors font-bold">20% Pass</a>
+      </nav>
+
+      <!-- Right Utility Icons -->
+      <div class="flex items-center gap-3 text-rz-espresso">
+        <a href="https://razab.com/search" class="hover:text-rz-clay transition-colors" title="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </a>
+        <a href="https://razab.com/cart" class="hover:text-rz-clay transition-colors relative" title="Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="absolute -top-1.5 -right-1.5 bg-rz-clay text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">1</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- ==================== 3. HERO BENTO SECTION (MATCHING SCREENSHOT) ==================== -->
+    <div class="p-4 sm:p-5 relative">
+      
+      <!-- Floating Left Discount Tab -->
+      <div class="absolute -left-1 top-20 z-20 hidden sm:block">
+        <a href="https://razab.com/discount/HARVEST?redirect=%2Fcollections%2Fall" class="floating-tab bg-rz-clay hover:bg-rz-clay-hover text-white text-[9px] font-bold uppercase tracking-widest py-3 px-1.5 rounded-l-md shadow-lg transition-colors block">
+          UNLOCK 20% OFF
+        </a>
+      </div>
+
+      <!-- Main Hero Bento Card with Background Image -->
+      <div class="relative w-full rounded-[24px] overflow-hidden bento-card shadow-lg bg-stone-900 border border-black/10 min-h-[380px] sm:min-h-[420px] flex flex-col justify-end p-6 sm:p-8">
+        
+        <!-- Background Imagery -->
+        <img src="assets/feast-hero-luxury.jpg" alt="Thanksgiving Feast" class="absolute inset-0 w-full h-full object-cover block">
+        
+        <!-- Cinematic Dark Scrim for High-Contrast Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/15 pointer-events-none"></div>
+
+        <!-- Top Frosted Pill Badges -->
+        <div class="absolute top-4 left-4 sm:top-5 sm:left-5 flex items-center gap-2 z-10">
+          <span class="glass-pill text-[10px] font-semibold uppercase px-3 py-1 rounded-full tracking-wider flex items-center gap-1.5 shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            1040&deg;F Thermal Safe
+          </span>
+          <span class="bg-rz-clay text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full tracking-wider shadow-sm">
+            HOLIDAY RESERVE
+          </span>
+        </div>
+
+        <!-- Hero Content Layer -->
+        <div class="relative z-10 max-w-md">
+          
+          <!-- Exact Two-Tone Serif Headline from Screenshot -->
+          <h1 class="font-serif text-3xl sm:text-4xl text-white leading-[1.15] mb-2 drop-shadow-md">
+            Elevate Your <br>
+            <span class="italic font-normal font-serif text-[#F8E7D8]">Culinary Sanctuary</span>
+          </h1>
+
+          <p class="text-xs sm:text-[13px] text-white/90 leading-relaxed mb-6 font-normal max-w-sm drop-shadow-sm">
+            Pure borosilicate glass with 4-point airtight locking lids and extreme thermal endurance &mdash; masterfully crafted for your Thanksgiving feast.
+          </p>
+
+          <!-- Buttons: White Primary Pill + Frosted Glass Secondary -->
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <a href="https://razab.com/collections/all" class="bg-white hover:bg-[#FAF7F2] text-rz-espresso font-semibold text-xs py-2.5 px-5 rounded-full shadow-lg transition-transform hover:scale-[1.02] flex items-center gap-2">
+              <span>Explore Collection</span>
+              <span class="w-5 h-5 rounded-full bg-rz-espresso text-white flex items-center justify-center text-[10px] font-bold">&rarr;</span>
+            </a>
+            
+            <a href="https://razab.com/discount/HARVEST?redirect=%2Fcollections%2Fall" class="glass-pill font-medium text-xs py-2.5 px-5 rounded-full transition-colors flex items-center gap-1.5">
+              <span>Code: HARVEST</span>
+              <span class="text-[10px] opacity-80">(20% Off)</span>
+            </a>
+          </div>
+
+          <!-- Social Proof Rating Widget (Bottom Right of Screenshot) -->
+          <div class="inline-flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/20 py-1.5 px-3 rounded-full text-white/90 text-[10.5px]">
+            <div class="flex -space-x-1">
+              <span class="w-4 h-4 rounded-full bg-amber-400 text-stone-900 font-bold text-[8px] flex items-center justify-center">★</span>
+              <span class="w-4 h-4 rounded-full bg-emerald-500 text-white font-bold text-[8px] flex items-center justify-center">✓</span>
+            </div>
+            <span class="font-medium text-white">4.9/5 Rating</span>
+            <span class="text-white/50">&bull;</span>
+            <span class="text-white/80">Trusted by 45,000+ Hosts</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ==================== 4. COUNTDOWN & HARVEST VIDEO CARD ==================== -->
+    <div class="px-4 sm:px-5 pb-5">
+      <div class="bg-white rounded-[24px] p-5 sm:p-6 border border-rz-border bento-card shadow-sm">
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-rz-clay">
+              Limited Thanksgiving Perk
+            </span>
+            <h2 class="font-serif text-xl sm:text-2xl text-rz-espresso font-semibold mt-0.5">
+              The Harvest Clock is Ticking
+            </h2>
+          </div>
+          <div class="text-[11px] text-stone-500 bg-rz-linen py-1 px-3 rounded-full border border-rz-border self-start sm:self-auto font-medium">
+            Expires Midnight, Nov 27
+          </div>
+        </div>
+
+        <!-- Video Card -->
+        <div class="rounded-xl overflow-hidden border border-rz-border bg-stone-900 mb-4">
+          <a href="https://razab.com/discount/HARVEST?redirect=%2Fcollections%2Fall" class="block group relative" title="Claim 20% Off With Code HARVEST">
+            <video autoplay loop muted playsinline poster="assets/dinner-bell-clock.gif" class="w-full h-auto block pointer-events-none group-hover:opacity-95 transition-opacity">
+              <source src="assets/timer%20gif.mp4" type="video/mp4">
+              <source src="assets/timer gif.mp4" type="video/mp4">
+              <img src="assets/dinner-bell-clock.gif" width="550" height="260" alt="Harvest Clock" class="w-full h-auto block">
+            </video>
+          </a>
+        </div>
+
+        <!-- ==================== BESPOKE GOLDEN FOIL VIP TICKET ==================== -->
+        <div class="bg-gradient-to-b from-[#FDFCFA] to-rz-linen rounded-2xl p-4 sm:p-5 border border-rz-border text-center shadow-sm relative overflow-hidden">
+          
+          <div class="flex items-center justify-between mb-3 px-1 text-xs">
+            <div class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-rz-clay animate-pulse"></span>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-rz-clay">Private Harvest Perk</span>
+            </div>
+            <span class="text-[10px] text-stone-500 font-mono tracking-wider">NO. 2026-VIP</span>
+          </div>
+
+          <!-- The Ticket Container (with notched ticket edges) -->
+          <div class="relative w-full max-w-[440px] h-[155px] mx-auto rounded-xl overflow-hidden shadow-md select-none border border-[#D9C4A3] bg-[#FAF7F2]">
+            
+            <!-- Notched Ticket Cutouts on Left & Right -->
+            <div class="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-rz-linen border border-[#D9C4A3] z-20"></div>
+            <div class="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-rz-linen border border-[#D9C4A3] z-20"></div>
+
+            <!-- REVEALED VOUCHER (BENEATH FOIL) -->
+            <div id="scratch-revealed-content" class="absolute inset-0 px-6 py-3.5 flex flex-col items-center justify-center text-center bg-[radial-gradient(ellipse_at_center,_#FFFDF9_0%,_#F6EFE5_100%)]">
+              <span class="text-[9.5px] uppercase font-serif tracking-[0.22em] text-rz-clay font-bold mb-0.5">
+                ✦ OFFICIAL THANKSGIVING VIP PASS ✦
+              </span>
+              <div class="flex items-center justify-center gap-2 my-1">
+                <span class="font-mono text-2xl sm:text-3xl font-black text-rz-espresso tracking-widest bg-white/95 px-4 py-0.5 rounded-lg border border-[#C8A97E]/60 shadow-inner">
+                  HARVEST
+                </span>
+                <button type="button" id="copy-ticket-btn" onclick="copyTicketCode()" class="bg-rz-clay hover:bg-rz-clay-hover text-white px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all shadow active:scale-95 flex items-center gap-1.5">
+                  <span id="copy-ticket-icon">📋</span>
+                  <span id="copy-ticket-text">Copy</span>
+                </button>
+              </div>
+              <p class="text-[11.5px] font-medium text-stone-700 mt-1">
+                <strong class="text-rz-clay">20% Off Everything</strong> &bull; Free US Delivery Over $50
+              </p>
+              <a href="https://razab.com/discount/HARVEST?redirect=%2Fcollections%2Fall" class="text-[10.5px] font-bold text-rz-olive-dark hover:underline mt-1 inline-flex items-center gap-1">
+                Auto-Apply Discount at Checkout &rarr;
+              </a>
+            </div>
+
+            <!-- HTML5 SCRATCH CANVAS (TOP LAYER: METALLIC FOIL & EMBOSSED CREST) -->
+            <canvas id="scratch-canvas" class="absolute inset-0 w-full h-full cursor-pointer z-10 transition-opacity duration-700"></canvas>
+          </div>
+
+          <!-- Action bar under ticket -->
+          <div class="mt-3 flex items-center justify-between px-2 text-xs text-stone-500">
+            <span class="text-[11px] flex items-center gap-1.5 text-stone-600 font-medium">
+              <span>🪙</span>
+              <span>Rub foil with finger or cursor</span>
+            </span>
+            <button type="button" onclick="revealScratchCard()" class="text-[11px] font-semibold text-rz-clay hover:text-rz-espresso underline transition-colors">
+              Instant Reveal &rarr;
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== 5. PRODUCT BENTO SHOWCASE (4 COURSES) ==================== -->
+    <div class="px-4 sm:px-5 pb-5">
+      <div class="text-center mb-4">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-rz-olive-dark">
+          Archival Bakeware
+        </span>
+        <h2 class="font-serif text-2xl text-rz-espresso font-semibold mt-0.5">
+          Four Holiday Essentials
+        </h2>
+      </div>
+
+      <!-- 2-Column Product Bento Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <!-- Product 1 -->
+        <article class="bg-white rounded-[20px] overflow-hidden border border-rz-border bento-card flex flex-col justify-between p-3.5">
+          <div>
+            <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-rz-clay text-white text-[9.5px] font-bold uppercase px-2 py-0.5 rounded-full shadow-sm">
+                SAVE 20%
+              </span>
+              <img src="assets/p-carry.jpg" width="300" height="225" alt="6.8 Qt Feast Roaster" class="w-full h-full object-cover block">
+            </div>
+            <h3 class="font-serif text-base text-rz-espresso font-semibold mb-1">6.8 Qt Feast Roaster</h3>
+            <p class="text-xs text-rz-muted">Heavy-duty borosilicate roaster with locking handles.</p>
+          </div>
+          <div class="pt-3 mt-2 border-t border-rz-border/60 flex items-center justify-between">
+            <div>
+              <span class="text-base font-bold text-rz-espresso">$39.99</span>
+              <span class="text-xs text-stone-400 line-through ml-1">$49.99</span>
+            </div>
+            <a href="https://razab.com/products/6500-ml-large-food-storage-container" class="bg-rz-olive-dark hover:bg-rz-clay text-white text-[10.5px] font-semibold uppercase px-3.5 py-1.5 rounded-full transition-colors">
+              Shop Now &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="bg-white rounded-[20px] overflow-hidden border border-rz-border bento-card flex flex-col justify-between p-3.5">
+          <div>
+            <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-rz-clay text-white text-[9.5px] font-bold uppercase px-2 py-0.5 rounded-full shadow-sm">
+                SAVE 20%
+              </span>
+              <img src="assets/bourbon-pecan-pie.jpg" width="300" height="225" alt="Pie Baker" class="w-full h-full object-cover block">
+            </div>
+            <h3 class="font-serif text-base text-rz-espresso font-semibold mb-1">Deep-Dish Pie Baker</h3>
+            <p class="text-xs text-rz-muted">Fluted rim for crisp crusts with travel cloche lid.</p>
+          </div>
+          <div class="pt-3 mt-2 border-t border-rz-border/60 flex items-center justify-between">
+            <div>
+              <span class="text-base font-bold text-rz-espresso">$27.99</span>
+              <span class="text-xs text-stone-400 line-through ml-1">$34.99</span>
+            </div>
+            <a href="https://razab.com/products/3900ml-large-glass-food-storage-container-with-airtight-lid" class="bg-rz-olive-dark hover:bg-rz-clay text-white text-[10.5px] font-semibold uppercase px-3.5 py-1.5 rounded-full transition-colors">
+              Shop Now &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="bg-white rounded-[20px] overflow-hidden border border-rz-border bento-card flex flex-col justify-between p-3.5">
+          <div>
+            <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-rz-clay text-white text-[9.5px] font-bold uppercase px-2 py-0.5 rounded-full shadow-sm">
+                SAVE 20%
+              </span>
+              <img src="assets/p-loaf.jpg" width="300" height="225" alt="Loaf Bakers" class="w-full h-full object-cover block">
+            </div>
+            <h3 class="font-serif text-base text-rz-espresso font-semibold mb-1">Twin Table Loaf Bakers</h3>
+            <p class="text-xs text-rz-muted">Bake artisan stuffing & breads side-by-side.</p>
+          </div>
+          <div class="pt-3 mt-2 border-t border-rz-border/60 flex items-center justify-between">
+            <div>
+              <span class="text-base font-bold text-rz-espresso">$31.99</span>
+              <span class="text-xs text-stone-400 line-through ml-1">$39.99</span>
+            </div>
+            <a href="https://razab.com/collections/glass-loaf-pans-with-lids" class="bg-rz-olive-dark hover:bg-rz-clay text-white text-[10.5px] font-semibold uppercase px-3.5 py-1.5 rounded-full transition-colors">
+              Shop Now &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="bg-white rounded-[20px] overflow-hidden border border-rz-border bento-card flex flex-col justify-between p-3.5">
+          <div>
+            <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-stone-100 mb-3">
+              <span class="absolute top-2.5 left-2.5 bg-rz-clay text-white text-[9.5px] font-bold uppercase px-2 py-0.5 rounded-full shadow-sm">
+                SAVE 20%
+              </span>
+              <img src="assets/p-host.jpg" width="300" height="225" alt="Hostess Suite" class="w-full h-full object-cover block">
+            </div>
+            <h3 class="font-serif text-base text-rz-espresso font-semibold mb-1">30-Pc Banquet Suite</h3>
+            <p class="text-xs text-rz-muted">15 containers & lids for airtight feast storage.</p>
+          </div>
+          <div class="pt-3 mt-2 border-t border-rz-border/60 flex items-center justify-between">
+            <div>
+              <span class="text-base font-bold text-rz-espresso">$79.99</span>
+              <span class="text-xs text-stone-400 line-through ml-1">$99.99</span>
+            </div>
+            <a href="https://razab.com/collections/all" class="bg-rz-olive-dark hover:bg-rz-clay text-white text-[10.5px] font-semibold uppercase px-3.5 py-1.5 rounded-full transition-colors">
+              Shop Now &rarr;
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ==================== 6. TRUST STRIP (3 PILLARS) ==================== -->
+    <div class="px-4 sm:px-5 pb-5">
+      <div class="bg-white rounded-[20px] py-4 px-6 border border-rz-border flex flex-wrap items-center justify-around gap-4 text-center text-xs text-rz-espresso font-medium">
+        <div class="flex items-center gap-2">
+          <span class="w-6 h-6 rounded-full bg-rz-linen flex items-center justify-center text-rz-olive-dark">🔥</span>
+          <span>1040&deg;F Broiler Shock Safe</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-6 h-6 rounded-full bg-rz-linen flex items-center justify-center text-rz-clay">🌿</span>
+          <span>100% Non-Toxic Glass</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-6 h-6 rounded-full bg-rz-linen flex items-center justify-center text-rz-olive-dark">🚚</span>
+          <span>Free US Delivery Over $50</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 7. FOOTER SECTION ==================== -->
+    <div class="w-full relative leading-none">
+      <img src="assets/thanksgiving-gathering-footer.jpg" width="600" height="240" alt="Thanksgiving Gathering" class="w-full h-auto block">
+      <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none"></div>
+    </div>
+
+    <footer class="bg-white pt-5 pb-8 px-6 text-center text-stone-500 border-t border-rz-border">
+      
+      <!-- Brand Logo -->
+      <a href="https://razab.com" class="inline-flex items-center gap-2 mb-3">
+        <div class="w-5 h-5 rounded bg-rz-clay flex items-center justify-center text-white font-serif font-bold text-xs">
+          R
+        </div>
+        <span class="font-serif font-bold text-sm tracking-[0.2em] text-rz-espresso uppercase">
+          R A Z A B
+        </span>
+      </a>
+
+      <p class="font-serif italic text-rz-espresso text-sm max-w-sm mx-auto mb-2 leading-relaxed">
+        &ldquo;May your feast be plentiful, and your cleanup effortless.&rdquo;
+      </p>
+
+      <p class="text-[10px] text-stone-400 max-w-sm mx-auto mb-4 leading-relaxed">
+        *Use promo code <strong class="text-rz-clay font-bold">HARVEST</strong> for 20% off at razab.com through Nov 27, 2026.
+      </p>
+
+      <div class="text-[10px] uppercase tracking-wider text-rz-olive-dark space-x-3 mb-2 font-medium">
+        <a href="{{ unsubscribe_url }}" class="hover:text-rz-clay">Unsubscribe</a>
+        <span>&bull;</span>
+        <a href="{{ preferences_url }}" class="hover:text-rz-clay">Preferences</a>
+        <span>&bull;</span>
+        <a href="{{ view_in_browser_url }}" class="hover:text-rz-clay">View Online</a>
+      </div>
+
+      <p class="text-[9.5px] text-stone-400">
+        &copy; 2026 Razab USA Inc. &bull; Secaucus, NJ
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- ==================== CONTROLLER SCRIPT ==================== -->
+  <script>
+    function setContainerWidth(width) {
+      const canvas = document.getElementById('email-canvas');
+      const indicator = document.getElementById('dim-indicator');
+      const b600 = document.getElementById('btn-600');
+      const b480 = document.getElementById('btn-480');
+      const b375 = document.getElementById('btn-375');
+
+      [b600, b480, b375].forEach(btn => {
+        btn.className = 'px-2.5 py-0.5 rounded text-stone-600 hover:text-stone-900 transition-colors';
+      });
+
+      if (width === '600px') {
+        canvas.style.maxWidth = '600px';
+        indicator.textContent = '600px';
+        b600.className = 'px-2.5 py-0.5 rounded text-white font-medium bg-rz-olive-dark transition-colors';
+      } else if (width === '480px') {
+        canvas.style.maxWidth = '480px';
+        indicator.textContent = '480px';
+        b480.className = 'px-2.5 py-0.5 rounded text-white font-medium bg-rz-olive-dark transition-colors';
+      } else if (width === '375px') {
+        canvas.style.maxWidth = '375px';
+        indicator.textContent = '375px';
+        b375.className = 'px-2.5 py-0.5 rounded text-white font-medium bg-rz-olive-dark transition-colors';
+      }
+    }
+
+    // ==================== BESPOKE GOLDEN FOIL SCRATCH CARD LOGIC ====================
+    let scratchInitialized = false;
+
+    function initScratchCanvas() {
+      const canvas = document.getElementById('scratch-canvas');
+      if (!canvas) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const w = rect.width || 440;
+      const h = rect.height || 155;
+      
+      // High-DPI support for retina crispness
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      
+      const ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+
+      // 1. Rich Multi-Stop Gilded Brushed Foil Base
+      const grad = ctx.createLinearGradient(0, 0, w, h);
+      grad.addColorStop(0, '#B89355');
+      grad.addColorStop(0.2, '#E8CFA0');
+      grad.addColorStop(0.4, '#FFF1D6');
+      grad.addColorStop(0.65, '#D4AE60');
+      grad.addColorStop(0.85, '#F3DEB8');
+      grad.addColorStop(1, '#9E7736');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, w, h);
+
+      // 2. Subtle Brushed Specular Shimmer Lines
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
+      ctx.lineWidth = 1.5;
+      for (let x = -h; x < w + h; x += 12) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x + h * 0.7, h);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // 3. Elegant Stitched Double Border with Inset Corner Marks
+      ctx.strokeStyle = 'rgba(110, 80, 30, 0.45)';
+      ctx.lineWidth = 1.2;
+      ctx.strokeRect(8, 8, w - 16, h - 16);
+      
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.55)';
+      ctx.lineWidth = 0.8;
+      ctx.strokeRect(11, 11, w - 22, h - 22);
+
+      // 4. Center Embossed Foil Medallion
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+      ctx.beginPath();
+      ctx.arc(w / 2, h / 2 - 2, 42, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.strokeStyle = 'rgba(110, 80, 30, 0.5)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // 5. Letterpress Stamped Typography
+      ctx.fillStyle = '#2A2013';
+      ctx.font = 'bold 10px "Inter", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.letterSpacing = '0.22em';
+      ctx.fillText('✦ RAZAB VIP PASS ✦', w / 2, h / 2 - 16);
+
+      ctx.font = 'italic 500 13px "Playfair Display", Georgia, serif';
+      ctx.fillStyle = '#1A140B';
+      ctx.fillText('Rub to Reveal 20% Off', w / 2, h / 2 + 3);
+
+      ctx.font = '500 9.5px "Inter", sans-serif';
+      ctx.fillStyle = '#5A4628';
+      ctx.fillText('Use cursor or finger to scratch foil', w / 2, h / 2 + 20);
+
+      // 6. Interactive Scratch Tracking
+      let isScratching = false;
+      let samplePoints = [];
+      const cols = 12;
+      const rows = 5;
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          samplePoints.push({
+            x: (w / (cols + 1)) * (i + 1),
+            y: (h / (rows + 1)) * (j + 1),
+            cleared: false
+          });
+        }
+      }
+
+      function scratch(x, y) {
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.beginPath();
+        ctx.arc(x, y, 22, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Check cleared sample points
+        let clearedCount = 0;
+        for (let p of samplePoints) {
+          if (!p.cleared) {
+            const dx = p.x - x;
+            const dy = p.y - y;
+            if (dx * dx + dy * dy < 500) {
+              p.cleared = true;
+            }
+          }
+          if (p.cleared) clearedCount++;
+        }
+
+        // Auto-reveal when 32% or more is scratched
+        if (clearedCount / samplePoints.length >= 0.32) {
+          revealScratchCard();
+        }
+      }
+
+      function getPos(e) {
+        const b = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+          x: clientX - b.left,
+          y: clientY - b.top
+        };
+      }
+
+      canvas.addEventListener('mousedown', (e) => {
+        isScratching = true;
+        const pos = getPos(e);
+        scratch(pos.x, pos.y);
+      });
+      canvas.addEventListener('mousemove', (e) => {
+        if (!isScratching) return;
+        const pos = getPos(e);
+        scratch(pos.x, pos.y);
+      });
+      window.addEventListener('mouseup', () => { isScratching = false; });
+
+      canvas.addEventListener('touchstart', (e) => {
+        isScratching = true;
+        const pos = getPos(e);
+        scratch(pos.x, pos.y);
+      }, { passive: true });
+      canvas.addEventListener('touchmove', (e) => {
+        if (!isScratching) return;
+        const pos = getPos(e);
+        scratch(pos.x, pos.y);
+      }, { passive: true });
+      window.addEventListener('touchend', () => { isScratching = false; });
+    }
+
+    function revealScratchCard() {
+      const canvas = document.getElementById('scratch-canvas');
+      if (canvas) {
+        canvas.style.opacity = '0';
+        canvas.style.pointerEvents = 'none';
+      }
+    }
+
+    function copyTicketCode() {
+      const code = 'HARVEST';
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.getElementById('copy-ticket-btn');
+        const icon = document.getElementById('copy-ticket-icon');
+        const text = document.getElementById('copy-ticket-text');
+        
+        if (btn && icon && text) {
+          icon.textContent = '✓';
+          text.textContent = 'Copied!';
+          btn.classList.remove('bg-rz-clay', 'hover:bg-rz-clay-hover');
+          btn.classList.add('bg-rz-olive-dark');
+
+          setTimeout(() => {
+            icon.textContent = '📋';
+            text.textContent = 'Copy';
+            btn.classList.remove('bg-rz-olive-dark');
+            btn.classList.add('bg-rz-clay', 'hover:bg-rz-clay-hover');
+          }, 2400);
+        }
+      }).catch(err => {
+        alert('Code HARVEST copied to clipboard!');
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', initScratchCanvas);
+    window.addEventListener('load', initScratchCanvas);
+    setTimeout(initScratchCanvas, 150);
+  </script>
+</body>
+</html>
