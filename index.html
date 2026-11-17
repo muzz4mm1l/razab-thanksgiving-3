@@ -216,15 +216,16 @@
         
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-rz-clay">
-              Limited Thanksgiving Perk
-            </span>
-            <h2 class="font-serif text-xl sm:text-2xl text-rz-espresso font-semibold mt-0.5">
-              The Harvest Clock is Ticking
+            <div class="flex items-center gap-1.5 mb-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-rz-clay animate-pulse"></span>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-rz-clay">✦ The Harvest Clock is Ticking ✦</span>
+            </div>
+            <h2 class="font-serif text-xl sm:text-2xl text-rz-espresso font-semibold">
+              20% Off Expires At Midnight, <span class="italic font-normal font-serif text-rz-clay">Nov 27</span>
             </h2>
           </div>
-          <div class="text-[11px] text-stone-500 bg-rz-linen py-1 px-3 rounded-full border border-rz-border self-start sm:self-auto font-medium">
-            Expires Midnight, Nov 27
+          <div class="text-[11px] text-stone-600 bg-rz-linen py-1 px-3 rounded-full border border-rz-border self-start sm:self-auto font-medium">
+            Code HARVEST ends 11:59 PM EST
           </div>
         </div>
 
@@ -236,6 +237,14 @@
               <source src="assets/timer gif.mp4" type="video/mp4">
               <img src="assets/dinner-bell-clock.gif" width="550" height="260" alt="Harvest Clock" class="w-full h-auto block">
             </video>
+          </a>
+        </div>
+
+        <!-- Claim Harvest Savings CTA Button (Matching Reference) -->
+        <div class="mb-5 text-center">
+          <a href="https://razab.com/discount/HARVEST?redirect=%2Fcollections%2Fall" class="w-full py-3 px-6 rounded-full bg-rz-olive-dark hover:bg-rz-clay text-white text-xs sm:text-[13px] font-semibold uppercase tracking-wider transition-all duration-200 shadow-md flex items-center justify-center gap-2 group">
+            <span>CLAIM HARVEST SAVINGS</span>
+            <span class="transition-transform group-hover:translate-x-1">&rarr;</span>
           </a>
         </div>
 
@@ -299,7 +308,109 @@
       </div>
     </div>
 
-    <!-- ==================== 5. PRODUCT BENTO SHOWCASE (4 COURSES) ==================== -->
+    <!-- ==================== 5. INTERACTIVE CULINARY LAB & 1040°F HEAT DIAL ==================== -->
+    <div class="px-4 sm:px-5 pb-5">
+      <div class="bg-white rounded-[24px] p-5 sm:p-6 border border-rz-border bento-card shadow-sm">
+        
+        <!-- Header -->
+        <div class="text-center mb-5">
+          <div class="inline-flex items-center gap-1.5 bg-rz-linen px-3 py-1 rounded-full border border-rz-border mb-2 text-[10px] font-bold uppercase tracking-widest text-rz-olive-dark shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Interactive Thermal Lab</span>
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl text-rz-espresso font-semibold">
+            1040&deg;F Oven-To-Table <span class="italic font-normal font-serif text-rz-clay">Heat Dial</span>
+          </h2>
+          <p class="text-xs sm:text-[13px] text-stone-600 max-w-md mx-auto mt-1 leading-relaxed">
+            Tap each extreme temperature to witness Razab pure borosilicate glass response in real time:
+          </p>
+        </div>
+
+        <!-- Temperature Dial Pills (Matching razab.com Pill UI) -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+          <button type="button" onclick="selectThermalTemp('-40')" id="thermal-btn--40" class="thermal-dial-btn py-2 px-2.5 rounded-full text-xs font-medium border border-rz-border bg-white text-rz-espresso hover:bg-rz-linen transition-all text-center flex items-center justify-center gap-1 shadow-sm">
+            <span>❄️</span>
+            <span>-40&deg;F <span class="text-[10px] opacity-75">Freezer</span></span>
+          </button>
+          
+          <button type="button" onclick="selectThermalTemp('70')" id="thermal-btn-70" class="thermal-dial-btn py-2 px-2.5 rounded-full text-xs font-medium border border-rz-border bg-white text-rz-espresso hover:bg-rz-linen transition-all text-center flex items-center justify-center gap-1 shadow-sm">
+            <span>🥣</span>
+            <span>70&deg;F <span class="text-[10px] opacity-75">Prep</span></span>
+          </button>
+          
+          <button type="button" onclick="selectThermalTemp('425')" id="thermal-btn-425" class="thermal-dial-btn py-2 px-2.5 rounded-full text-xs font-medium border border-rz-border bg-white text-rz-espresso hover:bg-rz-linen transition-all text-center flex items-center justify-center gap-1 shadow-sm">
+            <span>🔥</span>
+            <span>425&deg;F <span class="text-[10px] opacity-75">Roast</span></span>
+          </button>
+          
+          <button type="button" onclick="selectThermalTemp('1040')" id="thermal-btn-1040" class="thermal-dial-btn py-2 px-2.5 rounded-full text-xs font-semibold bg-rz-clay text-white shadow ring-2 ring-rz-clay/20 transition-all text-center flex items-center justify-center gap-1">
+            <span>⚡</span>
+            <span>1040&deg;F <span class="text-[10px] text-white/90">Broiler</span></span>
+          </button>
+        </div>
+
+        <!-- Live Simulation Display Stage -->
+        <div id="thermal-stage" class="bg-gradient-to-b from-[#FAF7F2] to-rz-linen rounded-2xl p-4 sm:p-5 border border-rz-border transition-all duration-300">
+          
+          <!-- Stage Header -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-rz-border/70">
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 id="thermal-stage-title" class="font-serif text-lg sm:text-xl font-bold text-rz-espresso">
+                  1040&deg;F Broiler Safe
+                </h3>
+              </div>
+              <p id="thermal-stage-desc" class="text-xs text-stone-600 mt-0.5">
+                Tested under direct red-hot broiler flame &amp; culinary torch
+              </p>
+            </div>
+            
+            <div id="thermal-stage-badge" class="bg-rz-clay text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full shadow-sm self-start sm:self-auto shrink-0 flex items-center gap-1">
+              <span>✓</span>
+              <span id="thermal-badge-text">100% Fracture Proof</span>
+            </div>
+          </div>
+
+          <!-- Culinary Focus Highlight Box -->
+          <div class="bg-white/90 rounded-xl p-3.5 border border-rz-border text-center mb-3.5 shadow-sm">
+            <div id="thermal-dish-icon" class="text-2xl mb-1">🍗</div>
+            <h4 id="thermal-dish-title" class="font-serif text-base sm:text-lg font-bold text-rz-espresso mb-0.5">
+              Crisp Golden Skin Roasted Turkey
+            </h4>
+            <p id="thermal-dish-sub" class="text-xs text-stone-600 max-w-sm mx-auto">
+              Withstands instantaneous shock from refrigerator chill straight into a 1040&deg;F roaring broiler flame.
+            </p>
+          </div>
+
+          <!-- Side-by-Side Material Comparison Bar -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div class="bg-white p-3 rounded-xl border border-emerald-200/80 flex items-start gap-2 shadow-xs">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">✓</span>
+              <div>
+                <span class="text-[9.5px] font-bold uppercase tracking-wider text-rz-olive-dark block">Razab Borosilicate</span>
+                <span id="thermal-metric-razab" class="text-[11.5px] font-semibold text-emerald-900 leading-snug">
+                  Zero Thermal Shock Fracture
+                </span>
+              </div>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl border border-rose-200/80 flex items-start gap-2 shadow-xs">
+              <span class="w-5 h-5 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">✕</span>
+              <div>
+                <span class="text-[9.5px] font-bold uppercase tracking-wider text-stone-500 block">Standard Plastic / Glass</span>
+                <span id="thermal-metric-comp" class="text-[11.5px] font-semibold text-rose-900 leading-snug">
+                  Melts at 140&deg;F &amp; Destroys Food
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== 6. PRODUCT BENTO SHOWCASE (4 COURSES) ==================== -->
     <div class="px-4 sm:px-5 pb-5">
       <div class="text-center mb-4">
         <span class="text-[10px] font-bold uppercase tracking-wider text-rz-olive-dark">
@@ -677,6 +788,93 @@
       }).catch(err => {
         alert('Code HARVEST copied to clipboard!');
       });
+    }
+
+    // ==================== INTERACTIVE THERMAL LAB LOGIC ====================
+    const thermalData = {
+      '1040': {
+        title: '1040\u00B0F Broiler Safe',
+        desc: 'Tested under direct red-hot broiler flame & culinary torch',
+        badge: '100% Fracture Proof',
+        badgeBg: 'bg-rz-clay',
+        dishIcon: '🍗',
+        dishTitle: 'Crisp Golden Skin Roasted Turkey',
+        dishSub: 'Withstands instantaneous shock from refrigerator chill straight into a 1040\u00B0F roaring broiler flame.',
+        razabMetric: 'Zero Thermal Shock Fracture',
+        compMetric: 'Melts at 140\u00B0F & Destroys Food'
+      },
+      '425': {
+        title: '425\u00B0F High-Heat Roast',
+        desc: 'Deep even radiant thermal diffusion for artisanal crusts & stuffing',
+        badge: 'Crust Caramelization',
+        badgeBg: 'bg-amber-600',
+        dishIcon: '🥧',
+        dishTitle: 'Bourbon Pecan Pie & Flaky Bakes',
+        dishSub: 'Pure borosilicate glass absorbs and radiates heat uniformly without burnt bottom hotspots.',
+        razabMetric: 'Uniform 360\u00B0 Radiant Heat Distribution',
+        compMetric: 'Uneven Hotspots Burn Crusts & Crack'
+      },
+      '70': {
+        title: '70\u00B0F Prep & Table Service',
+        desc: 'Oven-to-table crystal clarity worthy of your holiday centerpiece',
+        badge: 'Oven-To-Table Ready',
+        badgeBg: 'bg-rz-olive-dark',
+        dishIcon: '✨',
+        dishTitle: 'Elegant Dining Table Showpiece',
+        dishSub: 'Non-porous glass keeps food hot and appetising, without absorbing garlic grease or strong smells.',
+        razabMetric: '100% Non-Porous & Stain Resistant',
+        compMetric: 'Discolors Orange & Traps Old Food Smells'
+      },
+      '-40': {
+        title: '-40\u00B0F Sub-Zero Deep Freeze',
+        desc: '4-point airtight locking lid prevents freezer burn for weeks',
+        badge: 'Zero Frost Burn',
+        badgeBg: 'bg-sky-600',
+        dishIcon: '❄️',
+        dishTitle: 'Fresh Harvest Feast Leftovers Sealed',
+        dishSub: 'Withstands the expansion pressure of frozen liquids without micro-fracturing or cracking.',
+        razabMetric: 'Airtight 4-Point Moisture Seal',
+        compMetric: 'Brittle Plastic Cracks & Snaps Tabs'
+      }
+    };
+
+    function selectThermalTemp(temp) {
+      const data = thermalData[temp];
+      if (!data) return;
+
+      // Update button states
+      const allBtns = document.querySelectorAll('.thermal-dial-btn');
+      allBtns.forEach(btn => {
+        btn.className = 'thermal-dial-btn py-2 px-2.5 rounded-full text-xs font-medium border border-rz-border bg-white text-rz-espresso hover:bg-rz-linen transition-all text-center flex items-center justify-center gap-1 shadow-sm';
+      });
+
+      const activeBtn = document.getElementById(`thermal-btn-${temp}`);
+      if (activeBtn) {
+        activeBtn.className = 'thermal-dial-btn py-2 px-2.5 rounded-full text-xs font-semibold bg-rz-clay text-white shadow ring-2 ring-rz-clay/20 transition-all text-center flex items-center justify-center gap-1';
+      }
+
+      // Smooth transition on the stage
+      const stage = document.getElementById('thermal-stage');
+      if (stage) {
+        stage.style.opacity = '0.65';
+        setTimeout(() => {
+          document.getElementById('thermal-stage-title').textContent = data.title;
+          document.getElementById('thermal-stage-desc').textContent = data.desc;
+          document.getElementById('thermal-badge-text').textContent = data.badge;
+          
+          const badgeElem = document.getElementById('thermal-stage-badge');
+          badgeElem.className = `${data.badgeBg} text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full shadow-sm self-start sm:self-auto shrink-0 flex items-center gap-1`;
+
+          document.getElementById('thermal-dish-icon').textContent = data.dishIcon;
+          document.getElementById('thermal-dish-title').textContent = data.dishTitle;
+          document.getElementById('thermal-dish-sub').textContent = data.dishSub;
+
+          document.getElementById('thermal-metric-razab').textContent = data.razabMetric;
+          document.getElementById('thermal-metric-comp').textContent = data.compMetric;
+
+          stage.style.opacity = '1';
+        }, 120);
+      }
     }
 
     window.addEventListener('DOMContentLoaded', initScratchCanvas);
